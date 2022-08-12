@@ -1,14 +1,22 @@
 {
-  "name": "spider-core",
+  "name": "@35iter/spider-core",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist",
+  "private": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc -w"
   },
-  "keywords": [],
+  "keywords": [
+    "puppetter-cluster",
+    "crawler",
+    "爬虫"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
