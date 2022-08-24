@@ -28,6 +28,7 @@ export async function openURL({
   task,
   check,
   checkTimeout = 10 * 1000,
+  device = "pc",
 }: {
   url: string
   task: TaskFunction<any, any>
@@ -40,6 +41,12 @@ export async function openURL({
    * check 超时时间
    */
   checkTimeout?: number
+
+  /**
+   * 设备宽度
+   */
+
+  device?: "pc" | "mobile" | number
 }): Promise<any | null> {
   const _cluster = await launch()
 
@@ -52,6 +59,12 @@ export async function openURL({
       await page.setUserAgent(
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
       )
+
+      // 默认pc 大小
+      await page.setViewport({
+        width: device === "pc" ? 1400 : device === "mobile" ? 375 : device,
+        height: 1000,
+      })
 
       await page.setDefaultTimeout(0)
       // 完全打开页面后
