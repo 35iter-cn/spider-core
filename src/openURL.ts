@@ -7,9 +7,11 @@ let cluster: Promise<Cluster> | null = null
 
 type Config = {
   maxConcurrency: number
+  logger?: any
 }
 let config: Config = {
   maxConcurrency: 5,
+  logger: console,
 }
 
 export function setConfig(_config: Partial<Config> = {}) {
@@ -93,12 +95,12 @@ export async function openURL({
         await runCheck(() => check(page), checkTimeout)
       }
 
-      console.log(timetag, +new Date() - time)
+      config.logger.log(timetag, +new Date() - time)
 
       return await task(params)
     })
   } catch (error) {
-    console.log(error)
+    config.logger.error(error)
 
     return null
   }
