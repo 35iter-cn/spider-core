@@ -5,12 +5,23 @@ import { runCheck } from "./check"
 
 let cluster: Promise<Cluster> | null = null
 
+type Config = {
+  maxConcurrency: number
+}
+let config: Config = {
+  maxConcurrency: 5,
+}
+
+export function setConfig(_config: Partial<Config> = {}) {
+  config = Object.assign(config, _config)
+}
+
 export async function launch() {
   return cluster
     ? cluster
     : (cluster = Cluster.launch({
         concurrency: Cluster.CONCURRENCY_CONTEXT,
-        maxConcurrency: 3,
+        maxConcurrency: config.maxConcurrency,
         timeout: 2147483647, // 32-bits max number
       }))
 }
