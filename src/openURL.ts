@@ -95,7 +95,7 @@ export async function openURL({
         await runCheck(() => check(page), checkTimeout)
       }
 
-      config.logger.log(timetag, +new Date() - time)
+      config.logger.log(`${timetag}${+new Date() - time}`)
 
       return await task(params)
     })
