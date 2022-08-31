@@ -7,7 +7,7 @@ async function checkByElement(page: Page, selector: string) {
 // 计时结束后的标志
 const sleepStr = "awake"
 export const sleep = (s: number) => {
-  return new Promise<any>((res) => {
+  return new Promise<typeof sleepStr>((res) => {
     setTimeout(() => {
       res(sleepStr)
     }, s)
