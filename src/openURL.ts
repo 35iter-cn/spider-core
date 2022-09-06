@@ -1,6 +1,6 @@
 import { Page } from "puppeteer"
-import { Cluster } from "puppeteer-cluster"
-import { TaskFunction } from "puppeteer-cluster/dist/Cluster"
+import { Cluster } from "@35iter/puppeteer-cluster"
+import { TaskFunction } from "@35iter/puppeteer-cluster/dist/Cluster"
 import { runCheck } from "./check"
 
 let cluster: Promise<Cluster> | null = null

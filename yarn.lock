@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@35iter/puppeteer-cluster@^0.23.0":
+  version "0.23.0"
+  resolved "https://r.cnpmjs.org/@35iter/puppeteer-cluster/-/puppeteer-cluster-0.23.0.tgz#729fa409e28df6cad01ab7bbbaa44c648f6a1fa9"
+  integrity sha512-dCBWTND7WWaKqMq1fTb88N3CHS3RzrwSAPC3TgAfE/XA+ILGiYEzyKTkfAmOtm7Zhr3ORZ/3RtARbuF5isXUMw==
+  dependencies:
+    debug "^4.3.3"
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://r2.cnpmjs.org/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
@@ -899,13 +906,6 @@ pump@^3.0.0:
   dependencies:
     end-of-stream "^1.1.0"
     once "^1.3.1"
-
-puppeteer-cluster@^0.23.0:
-  version "0.23.0"
-  resolved "https://r.cnpmjs.org/puppeteer-cluster/-/puppeteer-cluster-0.23.0.tgz#da3f5c07de8a3069962bd9af6ee1767ba08fdbaf"
-  integrity sha512-108terIWDzPrQopmoYSPd5yDoy3FGJ2dNnoGMkGYPs6xtkdhgaECwpfZkzaRToMQPZibUOz0/dSSGgPEdXEhkQ==
-  dependencies:
-    debug "^4.3.3"
 
 puppeteer@^16.1.0:
   version "16.2.0"
