@@ -14,6 +14,11 @@ export const sleep = (s: number) => {
   })
 }
 /**
+ * 定期执行 check 方法，有三个情况：
+ *
+ * 1、超时，reject
+ * 2、check 执行出错，reject
+ * 3、在超时时间内，check 方法返回 true，此时 resolve(undefined)，表示检查成功
  *
  * @param check 检查方法，可以返回 promise 或者 boolean
  * @param timeout 检查超时时间，默认 10 秒钟，
